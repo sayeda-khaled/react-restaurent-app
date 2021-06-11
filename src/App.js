@@ -15,7 +15,9 @@ class App extends Component {
     this.state = {
     products: [],
   };
+  this.selectProduct = this.selectProduct.bind(this);
   this.toggleOrder = this.toggleOrder.bind(this);
+  this.addOrder = this.addOrder.bind(this);
   }
 
   componentDidMount() {
@@ -47,11 +49,19 @@ class App extends Component {
     this.setState({ productData });
   }
 
+  selectProduct(event) {
+  console.dir(event.target)
+  const index = Number(event.currentTarget.dataset.index);
+  // const index = +event.currentTarget.dataset.index
+  console.log(index);
+  this.setState({ selection: this.state.products[index] });
+}
+
   addOrder(newEntry){
     let productCopy=[...this.state.products];
     productCopy.push(newEntry);
     this.setState({
-    productd: productCopy,
+    products: productCopy,
     });
   }
 
@@ -68,7 +78,7 @@ class App extends Component {
 
     return (
       <>
-      <ProductOrder toggleOrder={this.toggleOrder} />
+      <ProductOrder addOrder={this.addOrder} />
       <ProductList orders={this.state.products} />
       </>
     );

@@ -1,16 +1,17 @@
 import { Component } from 'react';
 
+const defalutState = {
+  name: '',
+  PhoneNumber: '',
+  Address: '',
+
+}
+
 class ProductOrder extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      img: '',
-      name: '',
-      desc: '',
-      price: '',
-
-    };
+    this.state = defaultState;
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,20 +23,30 @@ class ProductOrder extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.toggleOrder(this.state);
-    this.setState({
-      img: '',
-      name: '',
-      desc: '',
-      price: '',
-    })
+    this.props.addOrder(this.state);
+    this.setState({defaultState});
   }
 
   render() {
     return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Full name
+          <input type="text" name="fullName" onChange={this.habdleInput} value={this.state.name}/>
+        </label>
 
-        <button type="submit">Submit Youur order</button>
+        <label>
+          Address
+          <input type="text" name="address" onChange{this.handleChange} value={this.state.address}/>
+        </label>
 
+        <label>
+          Phone Number
+          <input type="tel" name="phone" onChange={this.handleChange} value={this.state.phoneNumber} />
+        </label>
+
+        <button type="submit">Add Order</button>
+      </form>
     );
   }
 }

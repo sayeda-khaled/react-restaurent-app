@@ -1,17 +1,15 @@
 import { Component } from 'react';
 
-
-
-
 class ProductList extends Component {
+
   constructor(props) {
     super(props);
 
     this.state = {
-
-    };
+      isEditing: false,
+      selection: null,
+    }
   }
-
 
   render() {
 
