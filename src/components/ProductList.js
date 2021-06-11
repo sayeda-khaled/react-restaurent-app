@@ -6,14 +6,14 @@ class ProductList extends Component {
     super(props);
 
     this.state = {
-      isEditing: false,
-      selection: null,
+      // isEditing: false,
+      // selection: null,
     }
   }
 
   render() {
 
-    const listOrders = this.props.orders.map((product, index) =>(
+    const listProducts = this.props.productList.map((product, index) =>(
     <div key={index}>
     <p>{product.name}</p>
     <img src={product.img}></img>
@@ -23,7 +23,7 @@ class ProductList extends Component {
     ));
     return (
       <div>
-        <div>{listOrders}</div>
+        <div>{listProducts}</div>
       </div>
     );
   }

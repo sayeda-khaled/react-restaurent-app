@@ -1,10 +1,9 @@
 import { Component } from 'react';
 
-const defalutState = {
+const defaultState = {
   name: '',
-  PhoneNumber: '',
-  Address: '',
-
+  phone: '',
+  address: '',
 }
 
 class ProductOrder extends Component {
@@ -32,20 +31,20 @@ class ProductOrder extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Full name
-          <input type="text" name="fullName" onChange={this.habdleInput} value={this.state.name}/>
+          <input type="text" name="name" onChange={this.handleInput} value={this.state.name}/>
         </label>
 
         <label>
           Address
-          <input type="text" name="address" onChange{this.handleChange} value={this.state.address}/>
+          <input type="text" name="address" onChange={this.handleInput} value={this.state.address}/>
         </label>
 
         <label>
-          Phone Number
-          <input type="tel" name="phone" onChange={this.handleChange} value={this.state.phoneNumber} />
+          Phone number
+          <input type="tel" name="phone" onChange={this.handleInput} value={this.state.phone} />
         </label>
 
-        <button type="submit">Add Order</button>
+        <button type="submit">Submit Order</button>
       </form>
     );
   }

@@ -14,6 +14,7 @@ class App extends Component {
 
     this.state = {
     products: [],
+    selection: null,
   };
   this.selectProduct = this.selectProduct.bind(this);
   this.toggleOrder = this.toggleOrder.bind(this);
@@ -21,7 +22,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const productData = [
+    const products = [
      {
        img: supremePizza,
        name: 'Supreme Pizza',
@@ -46,7 +47,7 @@ class App extends Component {
      }
    ];
 
-    this.setState({ productData });
+    this.setState({ products });
   }
 
   selectProduct(event) {
@@ -75,11 +76,26 @@ class App extends Component {
 
 
   render() {
+    const product = this.state.products.map((product, index) => (
+      <li key={index} onClick={this.selectProduct} data-index={index}>
+        <h2>{product.name}</h2>
+      </li>
+    ));
 
     return (
       <>
+
+      // {
+      //   this.state.selection &&
+      //   <aside>
+      //     <h2>{this.state.selection?.title}</h2> {/*display the title for the selected blog*/}
+      //     <p>{this.state.selection?.body}</p> {/*display the body for the selected blog*/}
+      //     <button onClick={() => this.setState({selection: null})}>Close</button> {/*reset the selection to null upon clicking on the button*/}
+      //   </aside>
+      // }
+
       <ProductOrder addOrder={this.addOrder} />
-      <ProductList orders={this.state.products} />
+      <ProductList productList={this.state.products} />
       </>
     );
   }
