@@ -7,6 +7,14 @@ import veggiePizza from './images/veggiePizza.jpeg';
 import ProductList from './components/ProductList.js'
 import ProductOrder from './components/ProductOrder.js'
 
+// {
+//   this.state.selection &&
+//   <aside>
+//     <h2>{this.state.selection?.title}</h2> {/*display the title for the selected blog*/}
+//     <p>{this.state.selection?.body}</p> {/*display the body for the selected blog*/}
+//     <button onClick={() => this.setState({selection: null})}>Close</button> {/*reset the selection to null upon clicking on the button*/}
+//   </aside>
+// }
 
 class App extends Component {
   constructor(props) {
@@ -14,36 +22,42 @@ class App extends Component {
 
     this.state = {
     products: [],
-    selection: null,
+
   };
   this.selectProduct = this.selectProduct.bind(this);
-  this.toggleOrder = this.toggleOrder.bind(this);
+  this.toggleSelection = this.toggleSelection.bind(this);
   this.addOrder = this.addOrder.bind(this);
   }
 
   componentDidMount() {
     const products = [
      {
+       id: 1,
        img: supremePizza,
        name: 'Supreme Pizza',
        desc:
          'Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
-       price: '$19.99'
+       price: '$19.99',
+       selected: false
 
      },
      {
+       id: 2,
        img: cheesePizza,
        name: 'Cheese Pizza',
        desc:
          ' Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
-       price: '$16.99'
+       price: '$16.99',
+       selected: false
      },
      {
+       id: 3,
        img: veggiePizza,
        name: 'Veggie Pizza',
        desc:
          ' Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
-       price: '$14.99'
+       price: '$14.99',
+       selected: false
      }
    ];
 
@@ -67,35 +81,23 @@ class App extends Component {
   }
 
 
-  toggleOrder(id) {
+  toggleSelection(id) {
       const products = [...this.state.products];
       const index = products.findIndex(product => product.id === id);
-      products[index].isComplete = !products[index].isComplete;
+      products[index].selected = !products[index].selected;
       this.setState({ products });
     }
 
 
   render() {
-    const product = this.state.products.map((product, index) => (
-      <li key={index} onClick={this.selectProduct} data-index={index}>
-        <h2>{product.name}</h2>
-      </li>
-    ));
+
 
     return (
       <>
 
-      // {
-      //   this.state.selection &&
-      //   <aside>
-      //     <h2>{this.state.selection?.title}</h2> {/*display the title for the selected blog*/}
-      //     <p>{this.state.selection?.body}</p> {/*display the body for the selected blog*/}
-      //     <button onClick={() => this.setState({selection: null})}>Close</button> {/*reset the selection to null upon clicking on the button*/}
-      //   </aside>
-      // }
 
       <ProductOrder addOrder={this.addOrder} />
-      <ProductList productList={this.state.products} />
+      <ProductList selectProduct={this.state.selectProduct} productList={this.state.products} toggleSelection={this.toggleSelection} />
       </>
     );
   }

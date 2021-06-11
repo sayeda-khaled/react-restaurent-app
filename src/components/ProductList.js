@@ -6,10 +6,16 @@ class ProductList extends Component {
     super(props);
 
     this.state = {
-      // isEditing: false,
-      // selection: null,
+      isEditing: false,
+      selection: null,
     }
+    this.handleInput = this.handleInput.bind(this);
   }
+
+  handleInput(event) {
+    this.setState({ [event.target.name]: event.target.value});
+  }
+
 
   render() {
 
@@ -19,6 +25,8 @@ class ProductList extends Component {
     <img src={product.img}></img>
     <p>{product.desc}</p>
     <p>{product.price}</p>
+    <input type="checkbox" onChange={() => this.props.toggleSelection(product.id)}/>
+    <button type="button" onClick={() => this.selectProduct()}>Add To Order</button>
     </div>
     ));
     return (
