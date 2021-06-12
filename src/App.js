@@ -90,22 +90,20 @@ class App extends Component {
     let orderCopy=[...this.state.orderList];
     // console.log(removedEntry.id)
     const index = orderCopy.indexOf(removedEntry);
-    console.log(removedEntry)
+    // console.log(removedEntry)
     orderCopy.splice(index,1);
     this.setState({
     orderList: orderCopy,
     });
   }
 
-  newUser(newUser){
-    // let userCopy=[...this.state.user];
-    // console.log(removedEntry.id)
 
+  newUser(newUser){
     this.state.user.push(newUser);
     this.setState({
     user: newUser,
-
     });
+
     localStorage.setItem('order', JSON.stringify(this.state));
   }
 
@@ -116,18 +114,7 @@ class App extends Component {
       this.setState({ products });
     }
 
-  test() {
-    this.setState({ test: this.state.orderList });
-  }
-
-
   render() {
-
-    // const  products= this.state.products.map((product, index) => (
-    //   <li key={index} onClick={this.selectProduct} data-index={index}>
-    //     <h2>{product.price}</h2>
-    //   </li>
-    // ));
 
     return (
       <>

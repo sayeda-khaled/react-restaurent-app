@@ -7,8 +7,7 @@ class ProductList extends Component {
     super(props);
 
     this.state = {
-    // selection: null,
-    // price: 0,
+
     }
     this.handleInput = this.handleInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -19,17 +18,10 @@ class ProductList extends Component {
   }
 
   handleClick(orderSelection) {
-
     this.props.addOrder(orderSelection);
-
   }
 
   render() {
-    // const  products= this.state.products.map((product, index) => (
-    //   <li key={index} onClick={this.selectProduct} data-index={index}>
-    //     <h2>{product.price}</h2>
-    //   </li>
-    // ));
 
     const listProducts = this.props.productList.map((product, index) =>(
     <div className = "products" key={index}>

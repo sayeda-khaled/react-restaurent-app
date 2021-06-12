@@ -1,7 +1,5 @@
 import { Component } from 'react';
 
-
-
 class ProductOrder extends Component {
   constructor(props) {
     super(props);
@@ -15,30 +13,15 @@ class ProductOrder extends Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.appendOrder = this.appendOrder.bind(this);
   }
 
   handleInput(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  // appendOrder = () => {
-  //   this.setState({ userOrder: this.props.orderList });
-  // }
-
   handleSubmit(event) {
     event.preventDefault();
     this.props.newUser(this.state)
-    // this.appendOrder().then(() => localStorage.setItem('order', JSON.stringify(this.state.userOrder)));
-    // this.setState({ userOrder: this.props.orderList });
-    // console.log(this.state.userOrder);
-    // setTimeout(function(){
-      // localStorage.setItem('order', JSON.stringify(this.state));
-      // localStorage.setItem('order', JSON.stringify(this.state.userOrder));
-    // },1000)
-
-
-
   }
 
   render() {
