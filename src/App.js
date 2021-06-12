@@ -6,6 +6,7 @@ import cheesePizza from './images/cheesePizza.jpeg';
 import veggiePizza from './images/veggiePizza.jpeg';
 import ProductList from './components/ProductList.js'
 import ProductOrder from './components/ProductOrder.js'
+import OrderList from './components/OrderList.js'
 
 // {
 //   this.state.selection &&
@@ -22,11 +23,15 @@ class App extends Component {
 
     this.state = {
     products: [],
+    orderList: [],
+    user: [],
 
   };
   this.selectProduct = this.selectProduct.bind(this);
   this.toggleSelection = this.toggleSelection.bind(this);
   this.addOrder = this.addOrder.bind(this);
+  this.removeOrder = this.removeOrder.bind(this);
+  this.newUser = this.newUser.bind(this);
   }
 
   componentDidMount() {
@@ -73,13 +78,36 @@ class App extends Component {
 }
 
   addOrder(newEntry){
-    let productCopy=[...this.state.products];
-    productCopy.push(newEntry);
+    let orderCopy=[...this.state.orderList];
+    console.log(newEntry)
+    orderCopy.push(newEntry);
     this.setState({
-    products: productCopy,
+    orderList: orderCopy,
     });
   }
 
+  removeOrder(removedEntry){
+    let orderCopy=[...this.state.orderList];
+    // console.log(removedEntry.id)
+    const index = orderCopy.indexOf(removedEntry);
+    console.log(removedEntry)
+    orderCopy.splice(index,1);
+    this.setState({
+    orderList: orderCopy,
+    });
+  }
+
+  newUser(newUser){
+    // let userCopy=[...this.state.user];
+    // console.log(removedEntry.id)
+
+    this.state.user.push(newUser);
+    this.setState({
+    user: newUser,
+
+    });
+    localStorage.setItem('order', JSON.stringify(this.state));
+  }
 
   toggleSelection(id) {
       const products = [...this.state.products];
@@ -88,16 +116,26 @@ class App extends Component {
       this.setState({ products });
     }
 
+  test() {
+    this.setState({ test: this.state.orderList });
+  }
+
 
   render() {
 
+    // const  products= this.state.products.map((product, index) => (
+    //   <li key={index} onClick={this.selectProduct} data-index={index}>
+    //     <h2>{product.price}</h2>
+    //   </li>
+    // ));
 
     return (
       <>
-
-
-      <ProductOrder addOrder={this.addOrder} />
-      <ProductList selectProduct={this.state.selectProduct} productList={this.state.products} toggleSelection={this.toggleSelection} />
+      <ProductOrder newUser = {this.newUser} orderList={this.state.orderList}/>
+      <section className="main">
+        <ProductList addOrder={this.addOrder} selectProduct={this.state.selectProduct} productList={this.state.products} toggleSelection={this.toggleSelection} price={this.state.price}/>
+        <OrderList  removeOrder={this.removeOrder} orderList={this.state.orderList}/>
+      </section>
       </>
     );
   }
