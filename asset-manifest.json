@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/react-restaurant-app/static/css/main.065f55e2.chunk.css",
-    "main.js": "/react-restaurant-app/static/js/main.78a6b043.chunk.js",
-    "main.js.map": "/react-restaurant-app/static/js/main.78a6b043.chunk.js.map",
-    "runtime-main.js": "/react-restaurant-app/static/js/runtime-main.b7e4a470.js",
-    "runtime-main.js.map": "/react-restaurant-app/static/js/runtime-main.b7e4a470.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/react-restaurant-app/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.37367dc4.chunk.js": "/react-restaurant-app/static/js/2.37367dc4.chunk.js",
-    "static/js/2.37367dc4.chunk.js.map": "/react-restaurant-app/static/js/2.37367dc4.chunk.js.map",
-    "static/js/3.9cbf277d.chunk.js": "/react-restaurant-app/static/js/3.9cbf277d.chunk.js",
-    "static/js/3.9cbf277d.chunk.js.map": "/react-restaurant-app/static/js/3.9cbf277d.chunk.js.map",
-    "index.html": "/react-restaurant-app/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/react-restaurant-app/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.065f55e2.chunk.css.map": "/react-restaurant-app/static/css/main.065f55e2.chunk.css.map",
-    "static/js/2.37367dc4.chunk.js.LICENSE.txt": "/react-restaurant-app/static/js/2.37367dc4.chunk.js.LICENSE.txt",
-    "static/media/cheesePizza.be267916.jpeg": "/react-restaurant-app/static/media/cheesePizza.be267916.jpeg",
-    "static/media/supremePizza.80b4c309.jpeg": "/react-restaurant-app/static/media/supremePizza.80b4c309.jpeg",
-    "static/media/veggiePizza.a82d2fe2.jpeg": "/react-restaurant-app/static/media/veggiePizza.a82d2fe2.jpeg"
+    "main.css": "/react-restaurent-app/static/css/main.065f55e2.chunk.css",
+    "main.js": "/react-restaurent-app/static/js/main.2829f3fe.chunk.js",
+    "main.js.map": "/react-restaurent-app/static/js/main.2829f3fe.chunk.js.map",
+    "runtime-main.js": "/react-restaurent-app/static/js/runtime-main.027fb880.js",
+    "runtime-main.js.map": "/react-restaurent-app/static/js/runtime-main.027fb880.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/react-restaurent-app/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.37367dc4.chunk.js": "/react-restaurent-app/static/js/2.37367dc4.chunk.js",
+    "static/js/2.37367dc4.chunk.js.map": "/react-restaurent-app/static/js/2.37367dc4.chunk.js.map",
+    "static/js/3.9cbf277d.chunk.js": "/react-restaurent-app/static/js/3.9cbf277d.chunk.js",
+    "static/js/3.9cbf277d.chunk.js.map": "/react-restaurent-app/static/js/3.9cbf277d.chunk.js.map",
+    "index.html": "/react-restaurent-app/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/react-restaurent-app/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.065f55e2.chunk.css.map": "/react-restaurent-app/static/css/main.065f55e2.chunk.css.map",
+    "static/js/2.37367dc4.chunk.js.LICENSE.txt": "/react-restaurent-app/static/js/2.37367dc4.chunk.js.LICENSE.txt",
+    "static/media/cheesePizza.be267916.jpeg": "/react-restaurent-app/static/media/cheesePizza.be267916.jpeg",
+    "static/media/supremePizza.80b4c309.jpeg": "/react-restaurent-app/static/media/supremePizza.80b4c309.jpeg",
+    "static/media/veggiePizza.a82d2fe2.jpeg": "/react-restaurent-app/static/media/veggiePizza.a82d2fe2.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b7e4a470.js",
+    "static/js/runtime-main.027fb880.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.37367dc4.chunk.js",
     "static/css/main.065f55e2.chunk.css",
-    "static/js/main.78a6b043.chunk.js"
+    "static/js/main.2829f3fe.chunk.js"
   ]
 }
