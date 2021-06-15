@@ -8,15 +8,6 @@ import ProductList from './components/ProductList.js'
 import ProductOrder from './components/ProductOrder.js'
 import OrderList from './components/OrderList.js'
 
-// {
-//   this.state.selection &&
-//   <aside>
-//     <h2>{this.state.selection?.title}</h2> {/*display the title for the selected blog*/}
-//     <p>{this.state.selection?.body}</p> {/*display the body for the selected blog*/}
-//     <button onClick={() => this.setState({selection: null})}>Close</button> {/*reset the selection to null upon clicking on the button*/}
-//   </aside>
-// }
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +42,7 @@ class App extends Component {
        img: cheesePizza,
        name: 'Cheese Pizza',
        desc:
-         ' Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
+         ' Marinara sauce, Cheese, roma tomatoes, olives, and pesto',
        price: '$16.99',
        selected: false
      },
@@ -60,7 +51,7 @@ class App extends Component {
        img: veggiePizza,
        name: 'Veggie Pizza',
        desc:
-         ' Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
+         ' Marinara sauce, basil, mushrooms, roma tomatoes, olives, and pesto',
        price: '$14.99',
        selected: false
      }
@@ -121,7 +112,7 @@ class App extends Component {
       <ProductOrder newUser = {this.newUser} orderList={this.state.orderList}/>
       <section className="main">
         <ProductList addOrder={this.addOrder} selectProduct={this.state.selectProduct} productList={this.state.products} toggleSelection={this.toggleSelection} price={this.state.price}/>
-        <OrderList  removeOrder={this.removeOrder} orderList={this.state.orderList}/>
+        <OrderList removeOrder={this.removeOrder} orderList={this.state.orderList}/>
       </section>
       </>
     );
